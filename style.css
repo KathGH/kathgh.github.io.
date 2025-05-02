@@ -1,0 +1,425 @@
+/* --- Reseteo BÃ¡sico y Variables --- */
+/* --- Reseteo Básico y Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root { /* <--- Inicio del bloque */
+    --color-bg-light: #F8F9FA; /* <-- Punto y coma ; */
+    --color-white: #FFFFFF; /* <-- Punto y coma ; */
+    --color-text: #343A40; /* Gris oscuro para texto */ /* <-- Punto y coma ; */
+    --color-accent1: #A0C4FF; /* Azul Pastel */ /* <-- Punto y coma ; */
+    --color-accent2: #C3B1E1; /* Morado Pastel */ /* <-- Punto y coma ; */
+    --color-border: #DEE2E6; /* Gris claro para bordes sutiles */ /* <-- Punto y coma ; */
+
+    /* Línea en blanco - No hay problema */
+
+    --font-heading: 'Poppins', sans-serif; /* <-- Punto y coma ; */
+    --font-body: 'Nunito Sans', sans-serif; /* <-- Punto y coma ; */
+
+    /* Línea en blanco - No hay problema */
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05); /* <-- Punto y coma ; */
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1); /* <-- Punto y coma ; */
+    --border-radius: 8px; /* <-- Punto y coma ; */
+
+} /* <--- Fin del bloque :root */
+
+/* Línea en blanco - No hay problema */
+
+html {
+    scroll-behavior: smooth; /* <-- Punto y coma ; */
+}
+/* ... resto del CSS ... */
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px; /* Base font size */
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg-light);
+}
+
+/* --- Contenedor General --- */
+.container {
+    width: 90%;
+    max-width: 1140px; /* Ancho mÃ¡ximo del contenido */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* --- Tipografa --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700; /* Poppins Bold */
+    margin-bottom: 0.75em;
+    color: #212529; /* Un poco mÃ¡s oscuro para encabezados */
+}
+
+h1 { font-size: 2.8rem; line-height: 1.2; }
+h2 { font-size: 2rem; margin-top: 2em; } /* Espacio antes de secciones */
+h3 { font-size: 1.4rem; font-weight: 500; /* Poppins Medium */ } /* TÃ­tulos de tarjeta */
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--color-accent2); /* Morado pastel para enlaces */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent1); /* Azul pastel al pasar el ratÃ³n */
+}
+
+/* --- Barra de NavegaciÃ³n (Header) --- */
+.site-header {
+    background-color: var(--color-white);
+    padding: 1rem 0;
+    box-shadow: var(--shadow-sm);
+    position: sticky; /* Para que se quede fija (opcional) */
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Espacio entre elementos del menÃº */
+}
+
+.main-navigation a {
+    font-weight: 700; /* Nunito Bold */
+    color: var(--color-text);
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Para efecto hover */
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.main-navigation a:hover {
+    color: var(--color-accent2);
+    border-bottom-color: var(--color-accent2);
+}
+
+
+/* --- SecciÃ³n Hero --- */
+.hero {
+    background: linear-gradient(135deg, var(--color-accent1), var(--color-accent2)); /* Degradado pastel */
+    color: var(--color-white);
+    padding: 6rem 0; /* MÃ¡s espacio vertical */
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--color-white);
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Sombra sutil para legibilidad */
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px; /* Limita ancho del pÃ¡rrafo */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    opacity: 0.9;
+}
+
+/* --- Botones --- */
+.button {
+    display: inline-block;
+    padding: 0.8em 1.6em;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-heading);
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.button:hover {
+    transform: translateY(-2px); /* PequeÃ±o efecto al pasar el ratÃ³n */
+}
+
+.button-primary {
+    background-color: var(--color-white); /* BotÃ³n blanco en Hero */
+    color: var(--color-accent2); /* Texto morado */
+    box-shadow: var(--shadow-sm);
+}
+.button-primary:hover {
+    background-color: #f0eaff; /* Un blanco ligeramente morado */
+}
+
+.button-secondary {
+    background-color: var(--color-accent1); /* Azul pastel */
+    color: var(--color-text); /* Texto oscuro para contraste */
+    margin-top: auto; /* Para empujar al fondo en la card flex */
+}
+.button-secondary:hover {
+    background-color: #8ab5ff; /* Azul un poco mÃ¡s oscuro */
+}
+
+
+/* --- SecciÃ³n Intro --- */
+.intro {
+    padding: 4rem 0;
+    text-align: center;
+}
+.intro h2 {
+    color: var(--color-accent1); /* TÃ­tulo de secciÃ³n en azul */
+}
+.intro p {
+     max-width: 800px;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+/* --- SecciÃ³n Subtemas --- */
+.subtopics {
+    padding: 4rem 0;
+    background-color: var(--color-white); /* Fondo blanco para esta secciÃ³n */
+}
+
+.subtopics h2 {
+    text-align: center;
+    color: var(--color-accent2); /* TÃ­tulo de secciÃ³n en morado */
+    margin-bottom: 2.5em;
+}
+
+.subtopics-grid {
+    display: grid;
+    /* Columnas flexibles: mÃ­nimo 280px, mÃ¡ximo 1 fracciÃ³n del espacio */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* Espacio entre tarjetas */
+}
+
+.topic-card {
+    background-color: var(--color-bg-light); /* Fondo gris muy claro para tarjetas */
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Para alinear el botÃ³n abajo */
+    min-height: 300px; /* Altura mÃ­nima para consistencia */
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.topic-card h3 {
+    color: var(--color-accent1); /* TÃ­tulos de tarjeta en azul */
+    margin-bottom: 0.5em;
+}
+
+.topic-card p {
+    flex-grow: 1; /* Hace que el pÃ¡rrafo ocupe el espacio disponible */
+    margin-bottom: 1.5em;
+}
+
+/* Placeholder para Iconos (Puedes usar SVGs, FontAwesome o background-images) */
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-accent2); /* Morado pastel */
+    border-radius: 50%; /* CÃ­rculo */
+    margin-bottom: 1em;
+    /* Centrar contenido si usas ::before o SVG */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Si pones un icono de fuente */
+    font-size: 1.5rem;
+}
+/* Ejemplo simple de icono con ::before (requiere ajustes) */
+/* .icon-dudh::before { content: 'âš–ï¸'; } */
+/* .icon-carta::before { content: 'ðŸŒ³'; } */
+/* ... etc ... */
+
+
+/* --- SecciÃ³n Final CTA --- */
+.final-cta {
+    padding: 3rem 0;
+    text-align: center;
+    background-color: var(--color-accent1); /* Fondo azul pastel */
+    color: var(--color-text);
+}
+.final-cta p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+/* --- Pie de PÃ¡gina (Footer) --- */
+.site-footer {
+    background-color: var(--color-text); /* Fondo oscuro */
+    color: var(--color-bg-light); /* Texto claro */
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.site-footer p {
+    margin-bottom: 0;
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .hero h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+
+    .header-container {
+        flex-direction: column; /* Apila logo y nav en mÃ³vil */
+        gap: 0.5rem;
+    }
+    .main-navigation ul {
+        justify-content: center; /* Centra el menÃº */
+        gap: 1rem;
+        flex-wrap: wrap; /* Permite que el menÃº se divida si no cabe */
+    }
+    .main-navigation a {
+      font-size: 0.9rem;
+    }
+
+    .hero { padding: 4rem 0; }
+    .subtopics-grid { gap: 1.5rem; }
+    .topic-card { padding: 1.5rem; min-height: auto; } /* Ajusta padding y altura */
+}
+
+@media (max-width : 1054px ){
+    h1 { font-size: 2rem; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+    .button { padding: 0.7em 1.4em; font-size: 0.9rem;}
+}
+
+/* --- Estilos Adicionales para Páginas de Subtemas --- */
+
+.subtopic-content {
+    padding: 4rem 0; /* Espaciado vertical consistente */
+    background-color: var(--color-white); /* Fondo blanco para el área de contenido */
+}
+
+/* Estilo del Título Principal del Subtema */
+.subtopic-content h1 {
+    color: var(--color-accent2); /* Morado pastel */
+    font-size: 2.5rem; /* Ligeramente más pequeño que el H1 del Hero */
+    text-align: center;
+    margin-bottom: 1.5em; /* Más espacio después del título */
+}
+
+/* Estilo de los Subtítulos (H2) dentro del contenido */
+.subtopic-content h2 {
+    color: var(--color-accent1); /* Azul pastel */
+    font-size: 1.8rem;
+    margin-top: 2.5em; /* Espacio antes de cada sección */
+    margin-bottom: 1em;
+    padding-bottom: 0.3em;
+    border-bottom: 3px solid var(--color-accent1); /* Línea azul bajo el subtítulo */
+    display: inline-block; /* Para que el borde no ocupe todo el ancho */
+}
+/* Asegurar espacio después del borde */
+.subtopic-content h2::after {
+    content: '';
+    display: block; /* Evita que el texto siguiente se pegue al borde */
+}
+
+
+/* Estilo de las Listas */
+.subtopic-content ul {
+    list-style-type: disc; /* Puedes cambiar a 'circle' o 'square' */
+    margin-left: 1.8em; /* Indentación de la lista */
+    margin-bottom: 1.5em;
+}
+
+.subtopic-content ul li {
+    margin-bottom: 0.8em; /* Espacio entre elementos de la lista */
+    line-height: 1.7; /* Mejorar legibilidad en listas */
+}
+
+/* Estilo para el texto en negrita (strong) */
+.subtopic-content strong {
+    font-weight: 700; /* Asegurar negrita de Nunito Sans */
+    color: #495057; /* Un gris ligeramente más oscuro para destacar */
+}
+
+/* Estilo para los enlaces dentro de las listas (ej. recursos) */
+.subtopic-content ul a {
+    font-weight: 700; /* Hacer los enlaces de recursos un poco más notables */
+    /* Hereda el color morado de los enlaces generales */
+}
+.subtopic-content ul a:hover {
+     text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+
+/* Caja destacada para el ejemplo */
+.example-box {
+    background-color: var(--color-bg-light); /* Fondo gris muy claro */
+    border-left: 5px solid var(--color-accent2); /* Barra lateral morada */
+    padding: 1.5rem 2rem; /* Espaciado interno */
+    margin: 2.5em 0; /* Espacio vertical alrededor */
+    border-radius: 0 var(--border-radius) var(--border-radius) 0; /* Redondeo sutil */
+    box-shadow: var(--shadow-sm);
+}
+
+.example-box p:last-child {
+    margin-bottom: 0; /* Evitar espacio extra al final dentro de la caja */
+}
+
+/* Enlace/Botón para Volver */
+.back-link {
+    margin-top: 3rem; /* Espacio antes del botón */
+    text-align: center; /* Centrar el botón */
+}
+
+/* --- Ajustes Responsivos Adicionales (si son necesarios) --- */
+@media (max-width: 768px) {
+    .subtopic-content h1 {
+        font-size: 2rem;
+    }
+    .subtopic-content h2 {
+        font-size: 1.6rem;
+    }
+    .example-box {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* --- Estilos Adicionales Opcionales --- */
+
+/* Estilo para los H3 dentro del contenido del subtema (ej. Títulos de Recursos) */
+.subtopic-content h3 {
+    font-size: 1.5rem; /* Ligeramente más pequeño que H2 */
+    color: #5a6a7e; /* Un tono gris-azulado, diferente a H1 y H2 */
+    margin-top: 2em; /* Espacio antes del título del recurso */
+    margin-bottom: 0.8em;
+    /* Puedes quitar o mantener el borde si lo prefieres */
+    /* border-bottom: 2px solid var(--color-border); */
+    /* padding-bottom: 0.2em; */
+}
